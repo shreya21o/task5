@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2, #6b8dd6, #89f7fe);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  color: #ffffff;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.app-wrapper {
+  width: 100%;
+  max-width: 420px;
+}
+
+.weather-card {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  padding: 35px 30px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.weather-card h1 {
+  font-size: 28px;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+input[type="text"] {
+  padding: 12px 16px;
+  border: 2px solid #ffffff50;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 240px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 15px;
+  transition: border 0.3s ease, background 0.3s ease;
+}
+
+input[type="text"]::placeholder {
+  color: #dddddd;
+}
+
+input[type="text"]:focus {
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
+button {
+  background-color: #ffffff;
+  color: #333;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #f5f5f5;
+  color: #111;
+  transform: scale(1.03);
+}
+
+.result-box {
+  margin-top: 25px;
+  padding: 22px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  animation: fadeIn 1s ease;
+  color: #fff;
+}
+
+.result-box p {
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
